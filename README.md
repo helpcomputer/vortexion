@@ -5,8 +5,7 @@ Vortexion is a MSX/SG-1000 inspired shoot-em-up written in Python and uses the P
 
 You can play the game in itch.io [here](https://helpcomputer.itch.io/vortexion).
 
-![](/images/prev00.png?raw=true "")![](/images/prev01.png?raw=true "")
-![](/images/prev02.gif?raw=true "")
+![](/images/prev00.png?raw=true "")![](/images/prev01.gif?raw=true "")
 
 ## Dependencies
 - [Python](https://www.python.org/) 3.7 or higher.
