@@ -36,10 +36,10 @@ def load_music(file):
     with open(f"assets/{file}", "rt") as fin:
         return json.loads(fin.read())
     
-def play_music(music, loop=True, num_channels=4, tick=None):
+def play_music(music, doLoop=True, num_channels=4, theTick=None):
     for ch, sound in enumerate(music):
         px.sounds[ch].set(*sound)
-        px.play(ch, ch, tick, loop)
+        px.play(ch, ch, tick=theTick, loop=doLoop)
         if ch == num_channels-1: 
             break
         
@@ -64,15 +64,15 @@ def stop_music(num_channels=4):
 def is_music_playing():
     return px.play_pos(0) is not None
 
-def play_sound(snd, loop=False, priority=False):
+def play_sound(sound, doLoop=False, priority=False):
     global last_sound_played
     if px.play_pos(SOUND_CHANNEL) is None:
-        px.play(SOUND_CHANNEL, snd, None, loop)
-        last_sound_played = snd
+        px.play(SOUND_CHANNEL, snd=sound, loop=doLoop)
+        last_sound_played = sound
     else:
-        if priority or SND_PRIORITY[snd] >= SND_PRIORITY[last_sound_played]:
-            px.play(SOUND_CHANNEL, snd, None, loop)
-            last_sound_played = snd
+        if priority or SND_PRIORITY[sound] >= SND_PRIORITY[last_sound_played]:
+            px.play(SOUND_CHANNEL, snd=sound, loop=doLoop)
+            last_sound_played = sound
 
 def stop_sound():
     px.stop(SOUND_CHANNEL)

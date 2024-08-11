@@ -74,7 +74,7 @@ class GameStateStage:
         self.switch_state(State.STAGE_CLEAR)
         if self.game.game_vars.stage_num < FINAL_STAGE:
             self.music = load_music(MUSIC_STAGE_CLEAR)
-            play_music(self.music, loop=False, tick=620, num_channels=3)
+            play_music(self.music, False, 3, 620)
         else:
             stop_music()
 
@@ -133,11 +133,11 @@ class GameStateStage:
             else:
                 self.switch_state(State.GAME_OVER)
                 self.music = load_music(MUSIC_GAME_OVER)
-                play_music(self.music, loop=False, num_channels=3)
+                play_music(self.music, False, num_channels=3)
 
     def play_boss_music(self):
         self.music = load_music(MUSIC_BOSS)
-        play_music(self.music, loop=True, num_channels=3)
+        play_music(self.music, True, num_channels=3)
 
     def update_game_over(self):
         if self.input.has_tapped(input.BUTTON_1) or \
