@@ -27,7 +27,7 @@ class GameStateComplete:
         self.scroll_x = 0
 
         self.music = load_music(MUSIC_GAME_COMPLETE)
-        play_music(self.music, loop=True, num_channels=3)
+        play_music(self.music, True, num_channels=3)
     
     def on_exit(self):
         stop_music(3)
