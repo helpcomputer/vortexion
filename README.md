@@ -3,7 +3,7 @@
 ## Introduction
 Vortexion is a MSX/SG-1000 inspired shoot-em-up written in Python and uses the Pyxel game engine.
 
-You can play the game on itch.io [here](https://helpcomputer.itch.io/vortexion).
+You can play the game on itch.io [here](https://badcomputer0.itch.io/vortexion).
 
 ![](/images/prev00.png?raw=true "")![](/images/prev01.gif?raw=true "")
 
